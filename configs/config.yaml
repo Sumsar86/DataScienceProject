@@ -1,0 +1,27 @@
+data:
+  raw_data_path: "data/raw/Australian_Student_PerformanceData (ASPD24).csv"
+  processed_data_path: "data/processed/"
+  
+model:
+  type: "sklearn"  # Options: sklearn, custom
+  parameters:
+    n_estimators: 100
+    max_depth: 10
+    random_state: 42
+
+training:
+  test_size: 0.2
+  validation_size: 0.1
+  random_seed: 42
+  cross_validation_folds: 5
+
+evaluation:
+  metrics:
+    - accuracy
+    - precision
+    - recall
+    - f1_score
+
+logging:
+  log_file: "logs/training.log"
+  log_level: "INFO"
